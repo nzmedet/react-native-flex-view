@@ -1,12 +1,8 @@
 import React from 'react';
-import { ViewStyle, ViewProps } from 'react-native';
-interface PaneProps extends ViewStyle, ViewProps {
+import { ViewStyle, ViewProps, StyleProp } from 'react-native';
+interface Props extends ViewStyle, ViewProps {
     children: React.ReactNode;
-    safe?: boolean;
+    style?: StyleProp<ViewStyle>;
 }
-declare const Pane: React.FC<PaneProps>;
-export declare const Hpane: React.FC<PaneProps>;
-export declare const Vpane: React.FC<PaneProps>;
-export declare const Scene: React.FC<PaneProps>;
-export declare const Footer: React.FC<PaneProps>;
-export default Pane;
+declare const View: React.FC<Props>;
+export default View;

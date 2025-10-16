@@ -1,39 +1,25 @@
 import React from 'react'
-import { View as RNView, ViewStyle, SafeAreaView, ViewProps, StyleProp } from 'react-native'
+import { View as RNView, ViewStyle, ViewProps, StyleProp } from 'react-native'
 
 interface Props extends ViewStyle, ViewProps {
   children: React.ReactNode
-  horizontal?: boolean
-  vertical: boolean
   style?: StyleProp<ViewStyle>
 }
 
 function clean (obj) {
   for (let propName in obj) {
-    if (obj[propName] === null || obj[propName] === undefined) {
+    if (obj[propName] == null) {
       delete obj[propName]
     }
   }
   return obj
 }
 
-const horizontalStyles: ViewStyle = {
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'center'
-}
-const verticalStyle: ViewStyle = {
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-  alignItems: 'center'
-}
-
-const View: React.FC<Props> = ({ style, children, horizontal, vertical, ...props }: Props) => {
+const View: React.FC<Props> = ({ style, children, ...props }: Props) => {
   const {
     accessible,
     accessibilityLabel,
     accessibilityRole,
-    accessibilityStates,
     accessibilityHint,
     collapsable,
     needsOffscreenAlphaCompositing,
@@ -59,13 +45,57 @@ const View: React.FC<Props> = ({ style, children, horizontal, vertical, ...props
     onTouchEnd,
     onTouchCancel,
     onTouchEndCapture,
-    ...otherProps
+    accessibilityElementsHidden,
+    accessibilityLabelledBy,
+    accessibilityIgnoresInvertColors,
+    accessibilityLanguage,
+    accessibilityLargeContentTitle,
+    accessibilityLiveRegion,
+    accessibilityRespondsToUserInteraction,
+    accessibilityShowsLargeContentViewer,
+    accessibilityState,
+    accessibilityValue,
+    importantForAccessibility,
+    collapsableChildren,
+    focusable,
+    hitSlop,
+    id,
+    nativeID,
+    isTVSelectable,
+    onAccessibilityEscape,
+    onBlur,
+    onAccessibilityTap,
+    onFocus,
+    onLayout,
+    onMagicTap,
+    onPointerCancel,
+    onPointerCancelCapture,
+    onPointerDown,
+    onPointerEnter,
+    onPointerDownCapture,
+    onPointerEnterCapture,
+    onPointerLeave,
+    onPointerLeaveCapture,
+    onPointerMove,
+    onPointerMoveCapture,
+    onPointerUp,
+    pointerEvents,
+    onPointerUpCapture,
+    removeClippedSubviews,
+    role,
+    tabIndex,
+    screenReaderFocusable,
+    testID,
+    tvParallaxMagnification,
+    tvParallaxShiftDistanceX,
+    tvParallaxTiltAngle,
+    tvParallaxShiftDistanceY,
+    ...styleProps
   } = props
   const viewProps = {
     accessible,
     accessibilityLabel,
     accessibilityRole,
-    accessibilityStates,
     accessibilityHint,
     collapsable,
     needsOffscreenAlphaCompositing,
@@ -90,19 +120,58 @@ const View: React.FC<Props> = ({ style, children, horizontal, vertical, ...props
     onTouchMove,
     onTouchEnd,
     onTouchCancel,
-    onTouchEndCapture
+    onTouchEndCapture,
+    accessibilityElementsHidden,
+    accessibilityLabelledBy,
+    accessibilityIgnoresInvertColors,
+    accessibilityLanguage,
+    accessibilityLargeContentTitle,
+    accessibilityLiveRegion,
+    accessibilityRespondsToUserInteraction,
+    accessibilityShowsLargeContentViewer,
+    accessibilityState,
+    accessibilityValue,
+    importantForAccessibility,
+    collapsableChildren,
+    focusable,
+    hitSlop,
+    id,
+    nativeID,
+    isTVSelectable,
+    onAccessibilityEscape,
+    onBlur,
+    onAccessibilityTap,
+    onFocus,
+    onLayout,
+    onMagicTap,
+    onPointerCancel,
+    onPointerCancelCapture,
+    onPointerDown,
+    onPointerEnter,
+    onPointerDownCapture,
+    onPointerEnterCapture,
+    onPointerLeave,
+    onPointerLeaveCapture,
+    onPointerMove,
+    onPointerMoveCapture,
+    onPointerUp,
+    pointerEvents,
+    onPointerUpCapture,
+    removeClippedSubviews,
+    role,
+    tabIndex,
+    screenReaderFocusable,
+    testID,
+    tvParallaxMagnification,
+    tvParallaxShiftDistanceX,
+    tvParallaxTiltAngle,
+    tvParallaxShiftDistanceY
   }
-  const passedStyle = clean(otherProps)
+  const passedStyle = clean(styleProps)
   const paneProps = clean(viewProps)
-  let allStyles = [passedStyle, style]
-  if (horizontal) {
-    allStyles = [passedStyle, horizontalStyles, style]
-  }
-  if (vertical) {
-    allStyles = [passedStyle, verticalStyle, style]
-  }
+ 
   return (
-    <RNView style={allStyles} {...paneProps}>
+    <RNView style={[passedStyle, style]} {...paneProps}>
       {children}
     </RNView>
   )

@@ -29,20 +29,19 @@ var react_1 = __importDefault(require("react"));
 var react_native_1 = require("react-native");
 function clean(obj) {
     for (var propName in obj) {
-        if (obj[propName] === null || obj[propName] === undefined) {
+        if (obj[propName] == null) {
             delete obj[propName];
         }
     }
     return obj;
 }
-var Pane = function (_a) {
-    var children = _a.children, safe = _a.safe, props = __rest(_a, ["children", "safe"]);
-    var accessible = props.accessible, accessibilityLabel = props.accessibilityLabel, accessibilityRole = props.accessibilityRole, accessibilityStates = props.accessibilityStates, accessibilityHint = props.accessibilityHint, collapsable = props.collapsable, needsOffscreenAlphaCompositing = props.needsOffscreenAlphaCompositing, renderToHardwareTextureAndroid = props.renderToHardwareTextureAndroid, accessibilityViewIsModal = props.accessibilityViewIsModal, accessibilityActions = props.accessibilityActions, onAccessibilityAction = props.onAccessibilityAction, shouldRasterizeIOS = props.shouldRasterizeIOS, onStartShouldSetResponder = props.onStartShouldSetResponder, onMoveShouldSetResponder = props.onMoveShouldSetResponder, onResponderEnd = props.onResponderEnd, onResponderGrant = props.onResponderGrant, onResponderReject = props.onResponderReject, onResponderMove = props.onResponderMove, onResponderRelease = props.onResponderRelease, onResponderStart = props.onResponderStart, onResponderTerminationRequest = props.onResponderTerminationRequest, onResponderTerminate = props.onResponderTerminate, onStartShouldSetResponderCapture = props.onStartShouldSetResponderCapture, onMoveShouldSetResponderCapture = props.onMoveShouldSetResponderCapture, onTouchStart = props.onTouchStart, onTouchMove = props.onTouchMove, onTouchEnd = props.onTouchEnd, onTouchCancel = props.onTouchCancel, onTouchEndCapture = props.onTouchEndCapture, otherProps = __rest(props, ["accessible", "accessibilityLabel", "accessibilityRole", "accessibilityStates", "accessibilityHint", "collapsable", "needsOffscreenAlphaCompositing", "renderToHardwareTextureAndroid", "accessibilityViewIsModal", "accessibilityActions", "onAccessibilityAction", "shouldRasterizeIOS", "onStartShouldSetResponder", "onMoveShouldSetResponder", "onResponderEnd", "onResponderGrant", "onResponderReject", "onResponderMove", "onResponderRelease", "onResponderStart", "onResponderTerminationRequest", "onResponderTerminate", "onStartShouldSetResponderCapture", "onMoveShouldSetResponderCapture", "onTouchStart", "onTouchMove", "onTouchEnd", "onTouchCancel", "onTouchEndCapture"]);
+var View = function (_a) {
+    var style = _a.style, children = _a.children, props = __rest(_a, ["style", "children"]);
+    var accessible = props.accessible, accessibilityLabel = props.accessibilityLabel, accessibilityRole = props.accessibilityRole, accessibilityHint = props.accessibilityHint, collapsable = props.collapsable, needsOffscreenAlphaCompositing = props.needsOffscreenAlphaCompositing, renderToHardwareTextureAndroid = props.renderToHardwareTextureAndroid, accessibilityViewIsModal = props.accessibilityViewIsModal, accessibilityActions = props.accessibilityActions, onAccessibilityAction = props.onAccessibilityAction, shouldRasterizeIOS = props.shouldRasterizeIOS, onStartShouldSetResponder = props.onStartShouldSetResponder, onMoveShouldSetResponder = props.onMoveShouldSetResponder, onResponderEnd = props.onResponderEnd, onResponderGrant = props.onResponderGrant, onResponderReject = props.onResponderReject, onResponderMove = props.onResponderMove, onResponderRelease = props.onResponderRelease, onResponderStart = props.onResponderStart, onResponderTerminationRequest = props.onResponderTerminationRequest, onResponderTerminate = props.onResponderTerminate, onStartShouldSetResponderCapture = props.onStartShouldSetResponderCapture, onMoveShouldSetResponderCapture = props.onMoveShouldSetResponderCapture, onTouchStart = props.onTouchStart, onTouchMove = props.onTouchMove, onTouchEnd = props.onTouchEnd, onTouchCancel = props.onTouchCancel, onTouchEndCapture = props.onTouchEndCapture, accessibilityElementsHidden = props.accessibilityElementsHidden, accessibilityLabelledBy = props.accessibilityLabelledBy, accessibilityIgnoresInvertColors = props.accessibilityIgnoresInvertColors, accessibilityLanguage = props.accessibilityLanguage, accessibilityLargeContentTitle = props.accessibilityLargeContentTitle, accessibilityLiveRegion = props.accessibilityLiveRegion, accessibilityRespondsToUserInteraction = props.accessibilityRespondsToUserInteraction, accessibilityShowsLargeContentViewer = props.accessibilityShowsLargeContentViewer, accessibilityState = props.accessibilityState, accessibilityValue = props.accessibilityValue, importantForAccessibility = props.importantForAccessibility, collapsableChildren = props.collapsableChildren, focusable = props.focusable, hitSlop = props.hitSlop, id = props.id, nativeID = props.nativeID, isTVSelectable = props.isTVSelectable, onAccessibilityEscape = props.onAccessibilityEscape, onBlur = props.onBlur, onAccessibilityTap = props.onAccessibilityTap, onFocus = props.onFocus, onLayout = props.onLayout, onMagicTap = props.onMagicTap, onPointerCancel = props.onPointerCancel, onPointerCancelCapture = props.onPointerCancelCapture, onPointerDown = props.onPointerDown, onPointerEnter = props.onPointerEnter, onPointerDownCapture = props.onPointerDownCapture, onPointerEnterCapture = props.onPointerEnterCapture, onPointerLeave = props.onPointerLeave, onPointerLeaveCapture = props.onPointerLeaveCapture, onPointerMove = props.onPointerMove, onPointerMoveCapture = props.onPointerMoveCapture, onPointerUp = props.onPointerUp, pointerEvents = props.pointerEvents, onPointerUpCapture = props.onPointerUpCapture, removeClippedSubviews = props.removeClippedSubviews, role = props.role, tabIndex = props.tabIndex, screenReaderFocusable = props.screenReaderFocusable, testID = props.testID, tvParallaxMagnification = props.tvParallaxMagnification, tvParallaxShiftDistanceX = props.tvParallaxShiftDistanceX, tvParallaxTiltAngle = props.tvParallaxTiltAngle, tvParallaxShiftDistanceY = props.tvParallaxShiftDistanceY, styleProps = __rest(props, ["accessible", "accessibilityLabel", "accessibilityRole", "accessibilityHint", "collapsable", "needsOffscreenAlphaCompositing", "renderToHardwareTextureAndroid", "accessibilityViewIsModal", "accessibilityActions", "onAccessibilityAction", "shouldRasterizeIOS", "onStartShouldSetResponder", "onMoveShouldSetResponder", "onResponderEnd", "onResponderGrant", "onResponderReject", "onResponderMove", "onResponderRelease", "onResponderStart", "onResponderTerminationRequest", "onResponderTerminate", "onStartShouldSetResponderCapture", "onMoveShouldSetResponderCapture", "onTouchStart", "onTouchMove", "onTouchEnd", "onTouchCancel", "onTouchEndCapture", "accessibilityElementsHidden", "accessibilityLabelledBy", "accessibilityIgnoresInvertColors", "accessibilityLanguage", "accessibilityLargeContentTitle", "accessibilityLiveRegion", "accessibilityRespondsToUserInteraction", "accessibilityShowsLargeContentViewer", "accessibilityState", "accessibilityValue", "importantForAccessibility", "collapsableChildren", "focusable", "hitSlop", "id", "nativeID", "isTVSelectable", "onAccessibilityEscape", "onBlur", "onAccessibilityTap", "onFocus", "onLayout", "onMagicTap", "onPointerCancel", "onPointerCancelCapture", "onPointerDown", "onPointerEnter", "onPointerDownCapture", "onPointerEnterCapture", "onPointerLeave", "onPointerLeaveCapture", "onPointerMove", "onPointerMoveCapture", "onPointerUp", "pointerEvents", "onPointerUpCapture", "removeClippedSubviews", "role", "tabIndex", "screenReaderFocusable", "testID", "tvParallaxMagnification", "tvParallaxShiftDistanceX", "tvParallaxTiltAngle", "tvParallaxShiftDistanceY"]);
     var viewProps = {
         accessible: accessible,
         accessibilityLabel: accessibilityLabel,
         accessibilityRole: accessibilityRole,
-        accessibilityStates: accessibilityStates,
         accessibilityHint: accessibilityHint,
         collapsable: collapsable,
         needsOffscreenAlphaCompositing: needsOffscreenAlphaCompositing,
@@ -67,30 +66,55 @@ var Pane = function (_a) {
         onTouchMove: onTouchMove,
         onTouchEnd: onTouchEnd,
         onTouchCancel: onTouchCancel,
-        onTouchEndCapture: onTouchEndCapture
+        onTouchEndCapture: onTouchEndCapture,
+        accessibilityElementsHidden: accessibilityElementsHidden,
+        accessibilityLabelledBy: accessibilityLabelledBy,
+        accessibilityIgnoresInvertColors: accessibilityIgnoresInvertColors,
+        accessibilityLanguage: accessibilityLanguage,
+        accessibilityLargeContentTitle: accessibilityLargeContentTitle,
+        accessibilityLiveRegion: accessibilityLiveRegion,
+        accessibilityRespondsToUserInteraction: accessibilityRespondsToUserInteraction,
+        accessibilityShowsLargeContentViewer: accessibilityShowsLargeContentViewer,
+        accessibilityState: accessibilityState,
+        accessibilityValue: accessibilityValue,
+        importantForAccessibility: importantForAccessibility,
+        collapsableChildren: collapsableChildren,
+        focusable: focusable,
+        hitSlop: hitSlop,
+        id: id,
+        nativeID: nativeID,
+        isTVSelectable: isTVSelectable,
+        onAccessibilityEscape: onAccessibilityEscape,
+        onBlur: onBlur,
+        onAccessibilityTap: onAccessibilityTap,
+        onFocus: onFocus,
+        onLayout: onLayout,
+        onMagicTap: onMagicTap,
+        onPointerCancel: onPointerCancel,
+        onPointerCancelCapture: onPointerCancelCapture,
+        onPointerDown: onPointerDown,
+        onPointerEnter: onPointerEnter,
+        onPointerDownCapture: onPointerDownCapture,
+        onPointerEnterCapture: onPointerEnterCapture,
+        onPointerLeave: onPointerLeave,
+        onPointerLeaveCapture: onPointerLeaveCapture,
+        onPointerMove: onPointerMove,
+        onPointerMoveCapture: onPointerMoveCapture,
+        onPointerUp: onPointerUp,
+        pointerEvents: pointerEvents,
+        onPointerUpCapture: onPointerUpCapture,
+        removeClippedSubviews: removeClippedSubviews,
+        role: role,
+        tabIndex: tabIndex,
+        screenReaderFocusable: screenReaderFocusable,
+        testID: testID,
+        tvParallaxMagnification: tvParallaxMagnification,
+        tvParallaxShiftDistanceX: tvParallaxShiftDistanceX,
+        tvParallaxTiltAngle: tvParallaxTiltAngle,
+        tvParallaxShiftDistanceY: tvParallaxShiftDistanceY
     };
-    var style = clean(otherProps);
+    var passedStyle = clean(styleProps);
     var paneProps = clean(viewProps);
-    var view = (react_1.default.createElement(react_native_1.View, __assign({ style: style }, paneProps), children));
-    if (safe) {
-        return (react_1.default.createElement(react_native_1.SafeAreaView, { style: { flex: 1 } }, view));
-    }
-    return view;
+    return (react_1.default.createElement(react_native_1.View, __assign({ style: [passedStyle, style] }, paneProps), children));
 };
-exports.Hpane = function (_a) {
-    var children = _a.children, props = __rest(_a, ["children"]);
-    return (react_1.default.createElement(Pane, __assign({ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }, props), children));
-};
-exports.Vpane = function (_a) {
-    var children = _a.children, props = __rest(_a, ["children"]);
-    return (react_1.default.createElement(Pane, __assign({ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'flex-start' }, props), children));
-};
-exports.Scene = function (_a) {
-    var children = _a.children, props = __rest(_a, ["children"]);
-    return (react_1.default.createElement(Pane, __assign({ flex: 1, position: 'relative', paddingTop: react_native_1.Platform.select({ ios: 0, android: 0 }) }, props), children));
-};
-exports.Footer = function (_a) {
-    var children = _a.children, props = __rest(_a, ["children"]);
-    return (react_1.default.createElement(Pane, __assign({ flex: 1, paddingBottom: 10, justifyContent: 'flex-end' }, props), children));
-};
-exports.default = Pane;
+exports.default = View;
