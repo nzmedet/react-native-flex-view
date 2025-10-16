@@ -24,7 +24,7 @@ What if we could pass styles and props as direct property
 
 ### installation
 ```
-npm install react-native-flex-view
+npm install @nzmedet/view-on-steroids
 ```
 
 ### usage
@@ -33,57 +33,8 @@ Add style and view props to view
 import View from 'view-on-steroids'
 
 // accepts ViewStyleProps and ViewProps as props
-<View backgroundColor='red'>
+<View backgroundColor='red' pointerEvents='none'>
   children
 </View>
-
-// Align horizontally
-<View horizontal padding={10}>any children</View>
-
-// Align vertically
-<View vertical>any children</View>
-
-```
-
-### examples
-```
-import View from 'react-native-flex-view'
-
-// simple pane
-const demo1 = (
-  <View padding={10} backgroundColor='red' onTouchStart={() => false>
-    <Text>My text</Text>
-  </View>
-)
-
-// horizontal
-const demo2 = (
-  <View horizontal alignItems='center' onTouchStart={() => false>
-    <Text>h</Text>
-    <Text>o</Text>
-    <Text>r</Text>
-    <Text>i</Text>
-    <Text>z</Text>
-    <Text>o</Text>
-    <Text>n</Text>
-    <Text>t</Text>
-    <Text>a</Text>
-    <Text>l</Text>
-  </View>
-)
-
-// vertical
-const demo3 = (
-  <View vertical paddingLeft={10}>
-    <Text>v</Text>
-    <Text>e</Text>
-    <Text>r</Text>
-    <Text>t</Text>
-    <Text>i</Text>
-    <Text>c</Text>
-    <Text>a</Text>
-    <Text>l</Text>
-  </View>
-)
 
 ```
