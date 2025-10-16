@@ -30,7 +30,7 @@ npm install @nzmedet/view-on-steroids
 ### usage
 Add style and view props to view
 ```
-import View from 'view-on-steroids'
+import View from '@nzmedet/view-on-steroids'
 
 // accepts ViewStyleProps and ViewProps as props
 <View backgroundColor='red' pointerEvents='none'>
